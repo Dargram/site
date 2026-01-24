@@ -1,7 +1,24 @@
 {% extends 'pattern.html' %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/index.css') }}">
+{% endblock %}
 {% block title %}Main page{% endblock %}
 
-
 {% block content %}
-<h1>Якщо ти бачиш цю сторінку, то авторизація пройшла успішно та кукі є</h1>
+<div class="container">
+    <h1>Ласкаво просимо!</h1>
+    <p>Авторизація пройшла успішно, сесія та кукі працюють.</p>
+
+    <div class="card">
+        <h2>Адмін-панель</h2>
+        <p>Тут можна керувати користувачами та контентом.</p>
+        <a href="/admin" class="btn">Перейти</a>
+    </div>
+
+    <div class="card">
+        <h2>Профіль</h2>
+        <p>Ваші особисті налаштування та інформація.</p>
+        <a href="/profile" class="btn">Переглянути</a>
+    </div>
+</div>
 {% endblock %}

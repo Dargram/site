@@ -1,13 +1,12 @@
 from quart import Quart, render_template, url_for, redirect, session, request
 from werkzeug.security import check_password_hash, generate_password_hash
 from dotenv import load_dotenv
-import sys, os
+import sys, os, logging
 
 load_dotenv()
 secret = os.getenv("SECRET_KEY")
 if not secret:
     sys.exit()
-
 
 app = Quart(__name__)
 app.secret_key(secret)

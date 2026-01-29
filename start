@@ -1,0 +1,7 @@
+#!/bin/bash
+source site/bin/activate
+
+echo "Файл start запущений"
+export PYTHONDONTWRITEBYTECODE=1
+
+exec hypercorn app:app -c hypercorn.toml
